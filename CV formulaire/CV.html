@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+		<title>CV Colin Valentin</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/cv-style.css" rel="stylesheet">
+		
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+		
+		<script type="text/javascript">
+		$(function () {
+			
+			var filterList = {
+			
+				init: function () {
+				
+					// Plugin Mixitup, qui permet de filtrer les vignettes par catégorie
+					$('#portfoliolist').mixitup({
+						targetSelector: '.portfolio',
+						filterSelector: '.filter',
+						effects: ['fade'],
+						easing: 'snap',
+						// call the hover effect
+						onMixEnd: filterList.hoverEffect()
+					});             
+				
+				},
+				
+				hoverEffect: function () {
+				
+					// Fonction pour l'effet "hover"
+					$('#portfoliolist .portfolio').hover(
+						function () {
+							$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+							$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');             
+						},
+						function () {
+							$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+							$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');                               
+						}       
+					);              
+				
+				}
+
+			};
+			
+			// Lance les deux fonctions "hover" et "filtre"
+			filterList.init();
+			
+			
+		}); 
+		</script>
+</head>
+
+
+	
+<body>
+
+<!--Barre navigation-->
+<div class="container-fluid">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#top" class="navbar-brand">Top</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#menu1">Expériences</a>
+                        </li>
+                        <li><a href="#menu2">Formations</a>
+                        </li>
+                        <li><a href="#menu3">Portfolio</a>
+                        </li>
+						<li><a href="#menu4">Coordonnées</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</div>
+
+<header>
+	<div class="container-fluid" id="top">
+		<h1>Colin Valentin</h1>
+		<img src="img/yoda.png" class="img-circle"/>
+		<h3>Futur développeur web<h3>
+	</div>
+</header>
+
+<main>
+	<!--Exp et timeline-->
+	<div class="container-fluid">
+		<div class="row main__exp" id="menu1">
+			<div class="page-header">
+				<h3>Mes expériences professionnelles</h3>
+			</div>
+			<div class="col-lg-4">
+				<h4>Juin - septembre 2015 et 2014 : Eclusier saisonnier - Voies Navigables de France</h4><br/>
+				<ul>
+					<li>Canal de la Meuse principalement touristique, responsable d'écluses manuelles</li>
+					<li>Accueillir les touristes étrangers, les conseiller sur les sites touristiques locaux, 
+					faire respecter la réglementation, l'intégralité des règles de sécurité et prendre ses 
+					responsabilités</li>
+					<li>Effectuer les manoeuvres, l'entretien courant et la surveillance des ouvrages</li>
+					<li>Contribuer aux actions de mise en sécurité si un problème est détecté</li>
+				</ul>
+			</div>
+			<div class="col-lg-4">
+				<h4>Juin 2013 et juin 2012 : Eclusier vacataire - Voies Navigables de France</h4><br/>
+			</div>
+			<div class="col-lg-4">
+				<h4>Janvier - février 2012 : Stagiaire en Service Social - Hôpital St Nicolas - Verdun</h4><br/>
+				<ul>
+					<li>Accueillir les publics, gestion administrative et comptable, gestion de la démarche 
+					qualité en établissement social</li>
+					<li>Assurer et développer la qualité du service rendu</li>
+					<li>Etablir une relation de service auprès de différents publics (usagers, personnels, 
+					partenaires…)</li>
+					<li>Orienter les publics vers les prestataires concordants avec leurs besoins</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="row time" id="menu2">
+			<div class="container">
+				<div class="page-header">
+					<h3 id="timeline">Mes formations</h3>
+				</div>
+			  
+			  <ul class="timeline">
+				<li>
+				  <div class="timeline-badge primary"><i class="glyphicon glyphicon-download-alt"></i></div>
+				  <div class="timeline-panel">
+					<div class="timeline-heading">
+					  <h4 class="timeline-title">2015</h4>
+					</div>
+					<div class="timeline-body">
+					  <p>Début de la formation Webogreen</p>
+					</div>
+				  </div>
+				</li>
+
+				<li class="timeline-inverted">
+				  <div class="timeline-badge danger"><i class="glyphicon glyphicon-exclamation-sign"></i></div>
+				  <div class="timeline-panel">
+					<div class="timeline-heading">
+					  <h4 class="timeline-title">2012 - 2013</h4>
+					</div>
+					<div class="timeline-body">
+					  <p>Licence en Arts Appliqués</p>
+					</div>
+				  </div>
+				</li>
+
+				<li>
+				  <div class="timeline-badge success"><i class="glyphicon glyphicon-book"></i></div>
+				  <div class="timeline-panel">
+					<div class="timeline-heading">
+					  <h4 class="timeline-title">2010 - 2012</h4>
+					</div>
+					<div class="timeline-body">
+					  <p>BTS Services et Prestations des Secteurs Sanitaire et Social à Verdun (obtenu)</p>
+					</div>
+				  </div>
+				</li>
+				
+				<li class="timeline-inverted">
+				  <div class="timeline-badge success"><i class="glyphicon glyphicon-off"></i></div>
+				  <div class="timeline-panel">
+					<div class="timeline-heading">
+					  <h4 class="timeline-title">2012</h4>
+					</div>
+					<div class="timeline-body">
+					  <p>Obtention du C2I (Certificat Informatique et Internet)</p>
+					</div>
+				  </div>
+				</li>
+				
+				<li>
+				  <div class="timeline-badge success"><i class="glyphicon glyphicon-book"></i></div>
+				  <div class="timeline-panel">
+					<div class="timeline-heading">
+					  <h4 class="timeline-title">2008 - 2010</h4>
+					</div>
+					<div class="timeline-body">
+					  <p>Baccalauréat technologique Sciences et Techniques Sanitaires et Sociales (mention bien)</p>
+					</div>
+				  </div>
+				</li>
+			  </ul>
+			</div>
+		</div>
+	</div>
+	
+	<!--Portfolio-->
+	<div class="row portfolioall" id="menu3">
+		<div class="container__portfolio">
+			<div class="page-header">
+				<h3>Mon portfolio</h3>
+			</div>
+					<ul id="filters" class="clearfix row">
+						<li><span class="filter active" data-filter="cat1 cat2 cat3 cat4">Toutes mes catégories</span></li>
+						<li><span class="filter" data-filter="cat1">HTML/CSS</span></li>
+						<li><span class="filter" data-filter="cat2">Javascript</span></li>
+						<li><span class="filter" data-filter="cat3">Bootstrap</span></li>
+						<li><span class="filter" data-filter="cat4">Ruby</span></li>
+					</ul>
+
+					<div id="portfoliolist">
+						
+						<div class="portfolio cat2" data-cat="cat2">
+							<div class="portfolio-wrapper">             
+								<img src="img/portfolios/logo/5.jpg" alt="" />
+								<div class="label">
+									<div class="label-text">
+										<a class="text-title">Annuaire</a>
+										<span class="text-category">Javascript</span>
+									</div>
+									<div class="label-bg"></div>
+								</div>
+							</div>
+						</div>              
+
+						<div class="portfolio cat1" data-cat="cat1">
+							<div class="portfolio-wrapper">         
+								<img src="img/portfolios/app/1.jpg" alt="" />
+								<div class="label">
+									<div class="label-text">
+										<a class="text-title">Titre de mon projet HTML/CSS</a>
+										<span class="text-category">HTML/CSS</span>
+									</div>
+									<div class="label-bg"></div>
+								</div>
+							</div>
+						</div>      
+									
+						
+						<div class="portfolio cat4" data-cat="cat4">
+							<div class="portfolio-wrapper">         
+								<img src="img/portfolios/card/1.jpg" alt="" />
+								<div class="label">
+									<div class="label-text">
+										<a class="text-title">API Open Food Facts</a>
+										<span class="text-category">Ruby</span>
+									</div>
+									<div class="label-bg"></div>
+								</div>
+							</div>
+						</div>  
+									
+						<div class="portfolio cat1" data-cat="cat1">
+							<div class="portfolio-wrapper">
+								<img src="img/portfolios/app/3.jpg" alt="" />
+								<div class="label">
+									<div class="label-text">
+										<a class="text-title">Page de profil</a>
+										<span class="text-category">HTML/CSS</span>
+									</div>
+									<div class="label-bg"></div>
+								</div>
+							</div>
+						</div>          
+						
+
+						<div class="portfolio cat2" data-cat="cat2">
+							<div class="portfolio-wrapper">         
+								<img src="img/portfolios/logo/1.jpg" alt="" />
+								<div class="label">
+									<div class="label-text">
+										<a class="text-title">Jabbascript</a>
+										<span class="text-category">Javascript</span>
+									</div>
+									<div class="label-bg"></div>
+								</div>
+							</div>
+						</div>                                                                                                                                                          
+						
+						<div class="portfolio cat1" data-cat="cat1">
+							<div class="portfolio-wrapper">         
+								<img src="img/portfolios/app/2.jpg" alt="" />
+								<div class="label">
+									<div class="label-text">
+										<a class="text-title">Réalisation d'une maquette</a>
+										<span class="text-category">HTML/CSS</span>
+									</div>
+									<div class="label-bg"></div>
+								</div>
+							</div>
+						</div>                                                      
+						
+						<div class="portfolio cat4" data-cat="cat4">
+							<div class="portfolio-wrapper">         
+								<img src="img/portfolios/card/2.jpg" alt="" />
+								<div class="label">
+									<div class="label-text">
+										<a class="text-title">Exercice en Ruby</a>
+										<span class="text-category">Ruby</span>
+									</div>
+									<div class="label-bg"></div>
+								</div>
+							</div>
+						</div>                              
+																								 
+
+						<div class="portfolio cat3" data-cat="cat3">
+							<div class="portfolio-wrapper">         
+								<img src="img/portfolios/icon/1.jpg" alt="" />
+								<div class="label">
+									<div class="label-text">
+										<a class="text-title">Exercice utilisation Bootstrap</a>
+										<span class="text-category">Bootstrap</span>
+									</div>
+									<div class="label-bg"></div>
+								</div>
+							</div>
+						</div> 
+
+						<div class="portfolio cat4" data-cat="cat4">
+							<div class="portfolio-wrapper">         
+								<img src="img/portfolios/card/3.png" alt="" />
+								<div class="label">
+									<div class="label-text">
+										<a class="text-title">Titre de mon projet avec Ruby</a>
+										<span class="text-category">Ruby</span>
+									</div>
+									<div class="label-bg"></div>
+								</div>
+							</div>
+						</div>                                                                                                                                                    
+
+						<div class="portfolio cat3" data-cat="cat3">
+							<div class="portfolio-wrapper">         
+								<img src="img/portfolios/icon/2.jpg" alt="" />
+								<div class="label">
+									<div class="label-text">
+										<a class="text-title">Titre de mon projet Bootstrap</a>
+										<span class="text-category">Bootstrap</span>
+									</div>
+									<div class="label-bg"></div>
+								</div>
+							</div>
+						</div>             
+					</div>
+		</div
+	</div>
+</main>
+
+<footer>
+    <div class="container-fluid" id="menu4">
+		<h3>Coordonnées</h3><br/>
+		<br>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2604.021807134749!2d5.334285915688531!3d49.257032579328545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47eae2bdd2fc5179%3A0x307c72e68c0d4a68!2s8+Rue+de+la+D%C3%A9partementale+N%2F964%2C+55100+Samogneux!5e0!3m2!1sfr!2sfr!4v1448897435943" width="50%" frameborder="0" style="border:0" allowfullscreen></iframe><br/>
+			<br>
+            <p>Portable : 06.46.45.27.29 ~ Mail : val_gto@hotmail.fr ~ Permis B - Voiture personnelle</p>
+			
+	<!-- Formulaire -->	
+	<div class="container__form">
+		<div class="page-header">
+			<h3>Formulaire de contact</h3>
+		</div>
+		<form method="post" action="traitement.php">
+			<fieldset>
+				<label for="nom">Quel est votre nom ?</label><br />
+				<input type="text" name="nom" id="nom" placeholder="Ex : Hook" size="30" maxlength="20"/>
+				
+				<br />
+				<label for="prenom">Quel est votre prénom ?</label><br />
+				<input type="text" name="prenom" id="prenom" placeholder="Ex : James" size="30" maxlength="20"/>
+				
+				<br />
+				<label for="nom">Adresse Email :</label><br />
+				<input type="email" name="email" id="email" placeholder="Ex : yoda55@gmail.fr" size="30" maxlength="30" required/>
+				
+				<br />
+				<label for="message">Laissez moi votre message :</label><br />
+				<textarea name"message" id="message" rows="10" cols="50"></textarea>
+			</fieldset>
+			
+			<p>
+				<input type="submit" value="Envoyer" />
+			</p>
+		</form>
+		<p>Merci</p>
+	</div>
+
+</footer>
+
+    <script src="./js/jquery-2.1.4.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/scrollmovement.js"></script> 
+</body>
+</html>
